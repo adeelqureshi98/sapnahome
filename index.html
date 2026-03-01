@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapna Furniture & Home Decor | Est. 1980</title>
+    <meta name="description"
+        content="Modern luxury furniture. Est 1980. Owner: Raheem ud din Qureshi, CEO: Adeel Qureshi. Near UBL bank, GT Road, Kot Addu.">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Modern Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP for Smooth Modern Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="animated-bg" id="public-page">
+
+    <!-- Premium Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Animated Background base -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- 🌟 TOP CONTACT BAR (NEW: So user sees it immediately) -->
+    <div class="top-bar-info">
+        <div class="top-bar-container">
+            <span class="top-item"><i class="fa-solid fa-clock-rotate-left"></i> Established since 1980</span>
+            <span class="top-item"><i class="fa-solid fa-location-dot"></i> Near UBL Bank, GT Road, Kot Addu</span>
+            <span class="top-item"><i class="fa-solid fa-phone"></i> 0333 6005865 | 0331 8009893</span>
+            <a href="https://www.facebook.com/share/g/1BF8FtjRZd/" target="_blank" class="top-fb-btn custom-hover"><i
+                    class="fa-brands fa-facebook-f"></i> Follow on Facebook</a>
+        </div>
+    </div>
+
+    <!-- Glass Navbar -->
+    <nav class="navbar glass-panel" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo custom-hover">
+                <div class="logo-box">S</div>
+                <div class="logo-text">
+                    <h1>Sapna Furniture</h1>
+                    <span>& Home Decor</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item custom-hover">Home</a></li>
+                <li><a href="#about" class="nav-item custom-hover">Our Story</a></li>
+                <li class="dropdown nav-item custom-hover">
+                    <a href="#explore" class="dropbtn">Explore <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="dropdown-content glass-panel" id="navDropdown">
+                        <a href="#" data-filter="all" class="custom-hover">Everything</a>
+                        <!-- Injected dynamically via script.js -->
+                    </div>
+                </li>
+                <li><a href="#team" class="nav-item custom-hover">Leadership</a></li>
+                <li><a href="#" class="nav-item custom-hover" id="openContactBtn">Contact</a></li>
+                <!-- Manage App button removed for public view -->
+            </ul>
+
+            <div class="hamburger custom-hover">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vibrant Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <div class="pill-badge gsap-bounce">✨ Est. 1980 | Decades of Trust</div>
+            <h1 class="hero-title gsap-slide-up">Sapna Furniture <br><span class="text-gradient">& Home Decor</span>
+            </h1>
+
+            <!-- EXPLICIT LEADERSHIP INFO IN HERO -->
+            <div class="hero-leadership-info gsap-fade">
+                <p><strong>Owner & Founder:</strong> Raheem ud din Qureshi</p>
+                <p><strong>Chief Executive Officer:</strong> Adeel Qureshi</p>
+                <p>📍 <em>Near UBL Bank, GT Road, Kot Addu</em></p>
+            </div>
+
+            <div class="hero-buttons gsap-slide-up" style="margin-top: 25px;">
+                <a href="#explore" class="btn btn-primary custom-hover">View Collections <i
+                        class="fa-solid fa-arrow-right"></i></a>
+                <a href="https://www.facebook.com/share/g/1BF8FtjRZd/" target="_blank"
+                    class="btn btn-glass custom-hover fb-glass-btn"><i class="fa-brands fa-facebook"></i> Visit Facebook
+                    Page</a>
+            </div>
+        </div>
+
+        <div class="hero-visual gsap-float">
+            <div class="glass-card main-hero-card custom-hover">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800"
+                    alt="Modern Chair">
+                <div class="glass-tag">
+                    <i class="fa-solid fa-crown"></i> Kot Addu's Finest Since 1980
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modern Typography Quote Section -->
+    <section class="section quote-section" id="inspiration">
+        <div class="section-container">
+            <div class="quote-glass-box gsap-scale custom-hover">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <h2 class="modern-quote">"Quality is never an accident; it is always the result of high intention,
+                    sincere effort, and skillful execution."</h2>
+                <div class="quote-author-box">
+                    <p class="quote-author">Raheem ud din Qureshi</p>
+                    <span class="quote-role">Founder, Sapna Furniture & Home Decor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore / Pop Lists Section -->
+    <section class="section explore-section" id="explore">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2>Our Collections</h2>
+                <p>Click a category to reveal our modern lifestyle series.</p>
+            </div>
+
+            <!-- Vibrant Category Pills -->
+            <div class="category-pills gsap-slide-up" id="mainFilters">
+                <!-- Injected dynamically -->
+            </div>
+
+            <!-- POP LIST Subcategories -->
+            <div class="pop-list-container gsap-fade" id="subFiltersWrapper" style="display: none;">
+                <h3 class="pop-list-title">Select a Series</h3>
+                <div class="pop-list-items" id="subFilters">
+                    <!-- Injected dynamically with images -->
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products dynamically injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- The Story Behind -->
+    <section class="section about-section" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-text gsap-slide-up">
+                    <div class="pill-badge">Our Journey</div>
+                    <h2 class="section-title">The Story Behind <br><span class="text-gradient">Sapna Foam &
+                            Furniture</span></h2>
+                    <p class="lead-text">From a modest beginning in 1980, Sapna Furniture has grown into a symbol of
+                        luxury, comfort, and unmatched craftsmanship.</p>
+                    <p>What started as a passionate dream to provide unparalleled comfort to homes in Kot Addu has
+                        evolved into a trusted legacy. For over four decades, our commitment to quality materials,
+                        innovative designs, and customer satisfaction has remained unwavering. Every piece of furniture
+                        crafted at Sapna carries a story of dedication, hard work, and a vision to transform houses into
+                        beautiful homes.</p>
+                </div>
+                <div class="about-visual gsap-float">
+                    <div class="glass-card about-card custom-hover">
+                        <img src="https://images.unsplash.com/photo-1618220179428-22790b46a0eb?auto=format&fit=crop&q=80&w=800"
+                            alt="Craftsmanship">
+                        <div class="glass-tag gold-tag">
+                            <i class="fa-solid fa-medal"></i> 40+ Years of Excellence
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="section services-section" id="services">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2 class="section-title">Our Premium <span class="text-gradient">Services</span></h2>
+                <p>Comprehensive solutions for your home and office needs.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card gsap-slide-up">
+                    <div class="service-icon"><i class="fa-solid fa-couch"></i></div>
+                    <h3>Bespoke Furniture Design</h3>
+                    <p>Work with our master craftsmen to create custom furniture pieces tailored perfectly to your
+                        dimensions, style preferences, and fabric choices. Your imagination is the only limit.</p>
+                </div>
+                <div class="service-card gsap-slide-up" style="transition-delay: 0.1s;">
+                    <div class="service-icon"><i class="fa-solid fa-bed"></i></div>
+                    <h3>Premium Bedding Solutions</h3>
+                    <p>As authorized dealers for top national foam brands, we offer personalized sleep consultations to
+                        find the perfect mattress for your posture and comfort requirements.</p>
+                </div>
+                <div class="service-card gsap-slide-up" style="transition-delay: 0.2s;">
+                    <div class="service-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3>White-Glove Delivery</h3>
+                    <p>Experience hassle-free, secure delivery to 5 major cities. Our dedicated transport team ensures
+                        your luxury items arrive in pristine condition and are placed exactly where you want them.</p>
+                </div>
+                <div class="service-card gsap-slide-up" style="transition-delay: 0.3s;">
+                    <div class="service-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+                    <h3>Interior Space Planning</h3>
+                    <p>Not sure how a piece will fit? We offer expert interior planning advice to help you harmonize
+                        your new furniture with your existing room layout and color scheme.</p>
+                </div>
+                <div class="service-card gsap-slide-up" style="transition-delay: 0.4s;">
+                    <div class="service-icon"><i class="fa-solid fa-hammer"></i></div>
+                    <h3>Restoration & Repair</h3>
+                    <p>Breathe new life into beloved vintage pieces. Our restoration experts can repair, re-upholster,
+                        and polish your existing wood furniture to restore its original glory.</p>
+                </div>
+                <div class="service-card gsap-slide-up" style="transition-delay: 0.5s;">
+                    <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+                    <h3>Corporate Furnishing</h3>
+                    <p>We supply high-durability, ergonomically designed furniture for offices, hotels, and commercial
+                        spaces at competitive bulk rates, backed by comprehensive warranties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="section vision-section animated-bg-subtle" id="vision">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2 class="section-title">Vision, Mission <span class="text-gradient">& Values</span></h2>
+                <p>The guiding principles that drive our family forward.</p>
+            </div>
+
+            <div class="vmv-grid">
+                <div class="vmv-card glass-panel gsap-slide-up custom-hover">
+                    <div class="vmv-icon"><i class="fa-solid fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To be the absolute pinnacle of luxury furniture and premium foam products across Pakistan. We
+                        don't just sell furniture; we curate lifestyles. Our vision is to set an uncompromising standard
+                        for elegance, durability, and innovation that transforms every house into a sanctuary of comfort
+                        and prestige.</p>
+                </div>
+                <div class="vmv-card glass-panel gsap-slide-up custom-hover" style="transition-delay: 0.1s;">
+                    <div class="vmv-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>We are dedicated to crafting and delivering thoughtfully designed, highly durable, and
+                        extraordinarily comfortable furnishings that elevate the everyday living experience. Our mission
+                        extends beyond transactions; we build life-long relationships with our clients through
+                        relentless customer service and transparency.</p>
+                </div>
+                <div class="vmv-card glass-panel gsap-slide-up custom-hover" style="transition-delay: 0.2s;">
+                    <div class="vmv-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>Core Values</h3>
+                    <p style="margin-bottom: 15px;">The foundation of our enduring success since 1980.</p>
+                    <ul class="values-list">
+                        <li><i class="fa-solid fa-medal"></i> Uncompromising Quality</li>
+                        <li><i class="fa-solid fa-handshake-angle"></i> Integrity & Complete Trust</li>
+                        <li><i class="fa-solid fa-palette"></i> Masterful Craftsmanship</li>
+                        <li><i class="fa-solid fa-heart"></i> Utmost Customer Centricity</li>
+                        <li><i class="fa-solid fa-lightbulb"></i> Continuous Innovation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section why-us-section" id="why-choose-us">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2 class="section-title">Why Choose <span class="text-gradient">Sapna Furniture?</span></h2>
+                <p>What sets us apart from the rest.</p>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-us-card gsap-slide-up">
+                    <i class="fa-solid fa-couch"></i>
+                    <h3>Premium Materials</h3>
+                    <p>We source only the finest woods, fabrics, and foams to ensure your furniture looks flawless and
+                        lasts generations.</p>
+                </div>
+                <div class="why-us-card gsap-slide-up" style="transition-delay: 0.1s;">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>4+ Decades of Trust</h3>
+                    <p>Since 1980, we have been serving the community of Kot Addu and beyond, building an impeccable
+                        reputation for honesty.</p>
+                </div>
+                <div class="why-us-card gsap-slide-up" style="transition-delay: 0.2s;">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <h3>Custom Designs</h3>
+                    <p>Can't find what you're looking for? Our master craftsmen can bring your dream furniture concepts
+                        to life with exact specifications.</p>
+                </div>
+                <div class="why-us-card gsap-slide-up" style="transition-delay: 0.3s;">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Safe Delivery</h3>
+                    <p>We handle your precious items with the utmost care, delivering them safely directly to your
+                        doorstep across 5 major cities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Numbers That Matter -->
+    <section class="section stats-section text-center" id="stats">
+        <div class="section-container">
+            <h2 class="section-title gsap-slide-up">Numbers That <span class="text-gradient">Matter</span></h2>
+            <div class="stats-grid">
+                <div class="stat-card gsap-scale custom-hover">
+                    <h3 class="stat-number"><span class="counter" data-target="100">0</span>+</h3>
+                    <p class="stat-label">Employees</p>
+                </div>
+                <div class="stat-card gsap-scale custom-hover">
+                    <h3 class="stat-number"><span class="counter" data-target="250000">0</span>+</h3>
+                    <p class="stat-label">Satisfied Customers</p>
+                </div>
+                <div class="stat-card gsap-scale custom-hover">
+                    <h3 class="stat-number"><span class="counter" data-target="5">0</span></h3>
+                    <p class="stat-label">Cities Covered</p>
+                </div>
+                <div class="stat-card gsap-scale custom-hover">
+                    <h3 class="stat-number"><span class="counter" data-target="99">0</span>%</h3>
+                    <p class="stat-label">Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet The Team -->
+    <section class="section team-section" id="team">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2 class="section-title">Meet the People <span class="text-gradient">Behind</span></h2>
+                <p>The visionary leaders driving Sapna Furniture.</p>
+            </div>
+
+            <div class="ceo-split-section">
+                <!-- CEO Row -->
+                <div class="split-row gsap-slide-up">
+                    <div class="split-img">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800"
+                            alt="Adeel Qureshi" id="ceo_image_public">
+                    </div>
+                    <div class="split-text">
+                        <h3>Adeel Qureshi</h3>
+                        <span class="split-role">Chief Executive Officer</span>
+                        <p class="split-desc">Bridging traditional craftsmanship with modern innovation, Adeel Qureshi
+                            is the dynamic force leading the next generation of Sapna Furniture. With a keen eye for
+                            contemporary design trends and a progressive approach to business expansion, he has
+                            modernized the brand's aesthetic while fiercely protecting its heritage of durability.</p>
+                        <p class="split-desc">Under his strategic guidance, Sapna has expanded its reach, introduced
+                            highly customized premium collections, and dramatically elevated the digital shopping
+                            experience for clients nationwide.</p>
+                    </div>
+                </div>
+
+                <!-- Owner Row -->
+                <div class="split-row reverse gsap-slide-up" style="transition-delay: 0.2s;">
+                    <div class="split-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
+                            alt="Raheem ud din Qureshi" id="owner_image_public">
+                    </div>
+                    <div class="split-text">
+                        <h3>Raheem ud din Qureshi</h3>
+                        <span class="split-role">Owner & Founder</span>
+                        <p class="split-desc">The founding pillar and guiding soul of Sapna Furniture. Mr. Raheem ud din
+                            Qureshi laid the foundation of this illustrious brand in 1980 with a clear, unrelenting
+                            passion for delivering exquisite quality to his community.</p>
+                        <p class="split-desc">His hands-on leadership, profound understanding of materials, and
+                            deep-rooted commitment to honest business practices transformed a humble local showroom into
+                            a regional beacon of luxury and comfort. His philosophy remains simple: <em>"Never
+                                compromise on the integrity of the work, and the customers will become family."</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section class="section faq-section" id="faq">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+                <p>Everything you need to know about shopping with us.</p>
+            </div>
+
+            <div class="faq-grid gsap-slide-up">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer custom furniture design?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! We completely understand that luxury is personal. If you have a specific design in
+                            mind, our master craftsmen can build bespoke furniture tailored to your exact dimensions,
+                            fabric choices, and material preferences.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your delivery range?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            While our primary showroom is in Kot Addu, we safely deliver to 5 major surrounding cities.
+                            For specific delivery inquiries outside our standard zone, please contact our support team
+                            via WhatsApp.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do your foam products come with a warranty?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely. As an authorized premium dealer, all original mattress and foam products sold at
+                            Sapna Furniture carry the official brand warranty, ranging from 10 to 15 years depending on
+                            the specific model.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I place an order online?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Our online ordering is seamless and personal. Simply browse our 'Explore' section, find your
+                            desired item, and click the 'Order via WhatsApp' button. This connects you directly to our
+                            sales team who will finalize the details and arrange delivery.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 EXPLICIT & MASSIVE FOOTER BOARD -->
+    <footer class="footer" id="contact">
+        <div class="premium-footer-board gsap-slide-up">
+            <div class="footer-header">
+                <h2>Sapna Furniture & Home Decor</h2>
+                <p style="color: #fbbf24; font-weight: 600; font-size: 1.2rem; margin-top: 10px;">⭐ Proudly Established
+                    in 1980 ⭐</p>
+            </div>
+
+            <div class="footer-grid-premium">
+                <!-- Shop Details -->
+                <div class="premium-block custom-hover">
+                    <div class="block-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3>Shop Details</h3>
+                    <p><strong>Sapna Furniture & Home Decor</strong><br>Near UBL Bank,<br>GT Road, Kot Addu</p>
+                    <p class="phone-number" style="margin-top: 10px; font-size: 1.1rem !important;">0333 6005865</p>
+                    <p class="phone-number" style="font-size: 1.1rem !important;">0331 8009893</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="premium-block custom-hover">
+                    <div class="block-icon"><i class="fa-solid fa-link"></i></div>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#vision">Vision & Mission</a></li>
+                        <li><a href="#explore">Collections</a></li>
+                        <li><a href="#team">Leadership</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="premium-block custom-hover">
+                    <div class="block-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#contactModal"
+                                onclick="document.getElementById('contactModal').classList.add('active'); return false;">Contact
+                                Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Warranty Info</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect Block (FB Link & WhatsApp) -->
+                <div class="premium-block custom-hover">
+                    <div class="block-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Connect With Us</h3>
+                    <a href="https://www.facebook.com/share/g/1BF8FtjRZd/" target="_blank"
+                        class="btn w-100 custom-hover"
+                        style="display: flex; margin-top: 15px; background: #1877F2; color: #fff; justify-content: center; border-radius: 12px; padding: 12px;">
+                        <i class="fa-brands fa-facebook-f"></i> Facebook Page
+                    </a>
+                    <a href="https://wa.me/923136791333" target="_blank" class="btn w-100 custom-hover"
+                        style="display: flex; margin-top: 10px; background: #25D366; color: #fff; justify-content: center; border-radius: 12px; padding: 12px;">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Support
+                    </a>
+                </div>
+            </div>
+
+            <div class="massive-social-bar gsap-slide-up">
+                <a href="https://www.facebook.com/share/g/1BF8FtjRZd/" target="_blank" class="social-circle-btn sc-fb"
+                    title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://wa.me/923136791333" target="_blank" class="social-circle-btn sc-wa" title="WhatsApp"><i
+                        class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" target="_blank" class="social-circle-btn sc-tw" title="Twitter"><i
+                        class="fa-brands fa-twitter"></i></a>
+                <a href="#" target="_blank" class="social-circle-btn sc-ig" title="Instagram"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank" class="social-circle-btn sc-yt" title="YouTube"><i
+                        class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p>&copy; 1980 - <span id="year"></span> | Sapna Furniture & Home Decor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- 🌟 GLASS CONTACT & LEADERSHIP MODAL -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content glass-panel"
+            style="text-align: center; background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(212, 175, 55, 0.3);">
+            <span class="close-modal custom-hover" id="closeContactBtn"><i class="fa-solid fa-xmark"></i></span>
+
+            <div class="modal-header">
+                <i class="fa-solid fa-crown" style="font-size: 3rem; color: var(--accent); margin-bottom: 15px;"></i>
+                <h2>Leadership & Contact</h2>
+                <p style="color: #fbbf24; font-weight: 600;">⭐ Established in 1980 ⭐</p>
+            </div>
+
+            <div
+                style="margin: 30px 0; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 20px; text-align: left; border: 1px solid rgba(255,255,255,0.05);">
+                <h3 style="color: var(--accent); margin-bottom: 15px;"><i class="fa-solid fa-users-viewfinder"></i> Top
+                    Management</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 8px;"><strong>Owner & Founder:</strong> Raheem ud din
+                    Qureshi</p>
+                <p style="font-size: 1.1rem;"><strong>Chief Executive Officer:</strong> Adeel Qureshi</p>
+            </div>
+
+            <div
+                style="margin: 30px 0; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 20px; text-align: left; border: 1px solid rgba(255,255,255,0.05);">
+                <h3 style="color: var(--accent); margin-bottom: 15px;"><i class="fa-solid fa-location-dot"></i> Reach Us
+                </h3>
+                <p style="font-size: 1.1rem; margin-bottom: 8px;"><strong>Showroom:</strong> Near UBL Bank, GT Road, Kot
+                    Addu</p>
+                <p style="font-size: 1.1rem; margin-bottom: 8px;"><strong>Phone 1:</strong> 0333 6005865</p>
+                <p style="font-size: 1.1rem;"><strong>Phone 2:</strong> 0331 8009893</p>
+            </div>
+
+            <a href="https://www.facebook.com/share/g/1BF8FtjRZd/" target="_blank"
+                class="btn btn-primary w-100 custom-hover"
+                style="font-size: 1.1rem; margin-top: 10px; justify-content: center;">
+                <i class="fa-brands fa-facebook-f"></i> Visit Our Facebook Page
+            </a>
+        </div>
+    </div>
+
+    <!-- Admin Modal Removed for Public View -->
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923136791333" target="_blank" class="floating-wa-btn custom-hover"
+        title="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Firebase SDK (Live Database ke lye) -->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="firebase-config.js"></script>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
