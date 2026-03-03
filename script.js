@@ -19,6 +19,7 @@ function init() {
     initGSAPAnimations();
     setupModals();
     setupFAQs();
+    initThemeToggle();
 
     // Default Fallback load while Firebase connects
     categories = [...defaultCategories];
@@ -142,6 +143,39 @@ function rebindCursorHover() {
         el.removeEventListener('mouseenter', () => cursor.classList.add('active'));
         el.removeEventListener('mouseleave', () => cursor.classList.remove('active'));
         bindCursorEvents(cursor, el);
+    });
+}
+
+// -----------------------------------------
+// THEME TOGGLE LOGIC
+// -----------------------------------------
+function initThemeToggle() {
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    if (!themeToggleBtn || !themeIcon) return;
+
+    // Check localStorage for saved theme, default is dark (no class)
+    const savedTheme = localStorage.getItem('sapna_theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+
+    themeToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.body.classList.toggle('light-theme');
+        const isLight = document.body.classList.contains('light-theme');
+
+        if (isLight) {
+            localStorage.setItem('sapna_theme', 'light');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        } else {
+            localStorage.setItem('sapna_theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
     });
 }
 

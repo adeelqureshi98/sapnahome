@@ -27,6 +27,30 @@
     --smooth: all 0.35s ease;
 }
 
+body.light-theme {
+    /* Deeper, More Luxurious Pop Colors */
+    --accent: #b8860b;
+    /* Dark Goldenrod */
+    --accent-hover: #d4af37;
+    /* Luxury Gold */
+    --accent-secondary: #0284c7;
+    /* Darker Sky Blue */
+    --text-main: #0f172a;
+    /* Slate 900 */
+    --text-light: #475569;
+    /* Slate 600 */
+    --bg-main: #f8fafc;
+    /* Slate 50 */
+    --bg-darker: #f1f5f9;
+    /* Slate 100 */
+
+    /* Frosted Luxury Glass Effect */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    /* Light Frost Glass */
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
