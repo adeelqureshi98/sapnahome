@@ -69,8 +69,7 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
     position: relative;
-    padding-top: 80px;
-    /* Increased padding to prevent navbar overlap from larger top bar */
+    padding-top: 50px;
 }
 
 h1,
@@ -315,13 +314,22 @@ ul {
 ------------------------ */
 .navbar {
     position: fixed;
-    top: 95px;
-    /* Pushed down dynamically so it doesn't overlap top bar */
+    top: 55px;
     left: 5%;
     width: 90%;
     z-index: 1000;
     transition: var(--bounce);
     padding: 1rem 2rem;
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 20px;
+}
+
+.navbar.scrolled {
+    background: rgba(15, 23, 42, 0.95) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--accent) !important;
 }
 
 .nav-container {

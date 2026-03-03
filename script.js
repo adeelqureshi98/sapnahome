@@ -20,6 +20,7 @@ function init() {
     setupModals();
     setupFAQs();
     initThemeToggle();
+    setupLeadershipUploads();
 
     // Default Fallback load while Firebase connects
     categories = [...defaultCategories];
@@ -289,11 +290,9 @@ function initNavbarScroll() {
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-            navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.7)';
-            navbar.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.1)';
+            navbar.classList.remove('scrolled');
         }
     });
 
@@ -1018,12 +1017,21 @@ function getOrderText() {
     const address = document.getElementById('checkoutAddress').value || 'N/A';
 
     const paymentMethod = document.querySelector('input[name="paymethod"]:checked')?.value || 'N/A';
+    const tid = document.getElementById('checkoutTID')?.value || 'N/A';
+    const receiptInput = document.getElementById('checkoutReceipt');
+    const hasReceipt = (receiptInput && receiptInput.files.length > 0) ? "Yes (Screenshot Prepared)" : "None";
 
     text += "*Customer Details:*\n";
     text += `Name: ${name}\n`;
     text += `Phone: ${phone}\n`;
     text += `Address: ${address}\n\n`;
     text += `*Payment Method:* ${paymentMethod}\n`;
+
+    if (paymentMethod !== 'Cash on Delivery') {
+        text += `*Transaction ID (TID):* ${tid}\n`;
+        text += `*Payment Screenshot:* ${hasReceipt}\n`;
+        text += `\n_(Please attach your uploaded payment screenshot securely inside this chat)_`;
+    }
 
     return text;
 }
@@ -1046,6 +1054,30 @@ function placeOrder(method) {
     const orderText = getOrderText();
 
     if (method === 'whatsapp') {
+        const receiptInput = document.getElementById('checkoutReceipt');
+
+        // Attempt Native Web Share if a file is present (Perfect for mobile devices to WhatsApp)
+        if (receiptInput && receiptInput.files.length > 0 && navigator.canShare && navigator.canShare({ files: [receiptInput.files[0]] })) {
+            navigator.share({
+                files: [receiptInput.files[0]],
+                title: 'Sapna Furniture Order & Receipt',
+                text: orderText
+            }).then(() => {
+                // Clear cart if successful
+                cart = [];
+                updateCartUI();
+                document.getElementById('checkoutModal').classList.remove('active');
+                document.getElementById('cartSidebar').classList.remove('open');
+                document.getElementById('cartOverlay').classList.remove('show');
+            }).catch(error => {
+                console.log('Error sharing via native fallback, opening WA link...', error);
+                const waLink = `https://wa.me/923136791333?text=${encodeURIComponent(orderText)}`;
+                window.open(waLink, '_blank');
+            });
+            return; // Exit here as native share handles it!
+        }
+
+        // Standard Fallback Web WA Link
         const waLink = `https://wa.me/923136791333?text=${encodeURIComponent(orderText)}`;
         window.open(waLink, '_blank');
     } else if (method === 'email') {
@@ -1114,5 +1146,20 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.classList.remove('active');
         }
     });
+
+    // Toggle Payment Verification Section based on method
+    const paymentRadios = document.querySelectorAll('input[name="paymethod"]');
+    const paymentVerificationSection = document.getElementById('paymentVerificationSection');
+    if (paymentRadios.length > 0 && paymentVerificationSection) {
+        paymentRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'Cash on Delivery') {
+                    paymentVerificationSection.style.display = 'none';
+                } else {
+                    paymentVerificationSection.style.display = 'block';
+                }
+            });
+        });
+    }
 });
 

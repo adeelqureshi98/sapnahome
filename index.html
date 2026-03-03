@@ -583,6 +583,46 @@
         </div>
     </section>
 
+    <!-- Beautiful Standardized Business Hours Section -->
+    <section class="section business-hours-section" id="hours" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="section-container" style="max-width: 800px;">
+            <div class="glass-card gsap-slide-up custom-hover"
+                style="border: 2px solid var(--accent); position: relative; overflow: visible;">
+                <!-- Glamorous Badge -->
+                <div
+                    style="background: var(--accent); color: #000; padding: 5px 20px; font-weight: 800; border-radius: 20px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);">
+                    <i class="fa-solid fa-store"></i> WE ARE OPEN
+                </div>
+
+                <h2
+                    style="text-align: center; margin-top: 30px; margin-bottom: 25px; color: var(--accent); font-family: 'Poppins', sans-serif;">
+                    <i class="fa-regular fa-clock"></i> Our Business Hours
+                </h2>
+
+                <div style="padding: 0 40px 40px 40px; font-size: 1.15rem; font-weight: 500;">
+                    <div
+                        style="display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px dashed var(--glass-border);">
+                        <span><i class="fa-solid fa-calendar-day"
+                                style="color: var(--text-light); margin-right: 10px;"></i> Monday - Thursday</span>
+                        <span style="color: var(--text-main);">9:00 AM - 8:00 PM</span>
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px dashed var(--glass-border);">
+                        <span><i class="fa-solid fa-calendar-day" style="color: #f43f5e; margin-right: 10px;"></i>
+                            Friday</span>
+                        <span
+                            style="color: #f43f5e; font-weight: 700; background: rgba(244, 63, 94, 0.1); padding: 2px 10px; border-radius: 8px;">Closed</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 15px 0;">
+                        <span><i class="fa-solid fa-calendar-day"
+                                style="color: var(--text-light); margin-right: 10px;"></i> Saturday - Sunday</span>
+                        <span style="color: var(--text-main);">9:00 AM - 8:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 🌟 EXPLICIT & MASSIVE FOOTER BOARD -->
     <footer class="footer" id="contact">
         <div class="premium-footer-board gsap-slide-up">
@@ -713,7 +753,8 @@
                     <div style="display: flex; justify-content: space-between; color: var(--text-main);"><span>Monday -
                             Thursday:</span> <span>9:00 AM - 8:00 PM</span></div>
                     <div style="display: flex; justify-content: space-between; color: #f43f5e; font-weight: bold;">
-                        <span>Friday:</span> <span>Closed</span></div>
+                        <span>Friday:</span> <span>Closed</span>
+                    </div>
                     <div style="display: flex; justify-content: space-between; color: var(--text-main);"><span>Saturday
                             - Sunday:</span> <span>9:00 AM - 8:00 PM</span></div>
                 </div>
@@ -860,6 +901,22 @@
                                 <small>Pay physically when receiving the order.</small>
                             </span>
                         </label>
+                    </div>
+                </div>
+
+                <!-- Payment Verification (Online Only) -->
+                <div class="checkout-section" id="paymentVerificationSection">
+                    <h3><i class="fa-solid fa-receipt"></i> Payment Verification</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 15px;">(Required for Online
+                        Methods)</p>
+                    <div class="form-group">
+                        <label>Transaction ID (TID)</label>
+                        <input type="text" id="checkoutTID" class="glass-input" placeholder="e.g. 123456789">
+                    </div>
+                    <div class="form-group">
+                        <label>Upload Payment Screenshot</label>
+                        <input type="file" id="checkoutReceipt" class="glass-input" accept="image/*"
+                            style="padding-top: 10px;">
                     </div>
                 </div>
             </div>
