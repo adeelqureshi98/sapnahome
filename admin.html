@@ -37,10 +37,10 @@
     <div class="top-bar-info">
         <div class="top-bar-container">
             <span class="top-item"><i class="fa-solid fa-clock-rotate-left"></i> Established since 1980</span>
+            <span class="top-item"><i class="fa-regular fa-clock"></i> Hours: Monday - Sunday 9:00 AM to 8:00 PM <span
+                    style="color:#f43f5e; font-weight:700; margin-left:5px;">(Friday Off)</span></span>
             <span class="top-item"><i class="fa-solid fa-location-dot"></i> Near UBL Bank, GT Road, Kot Addu</span>
             <span class="top-item"><i class="fa-solid fa-phone"></i> 0333 6005865 | 0331 8009893</span>
-            <a href="https://www.facebook.com/share/g/1BF8FtjRZd/" target="_blank" class="top-fb-btn custom-hover"><i
-                    class="fa-brands fa-facebook-f"></i> Follow on Facebook</a>
         </div>
     </div>
 
@@ -57,7 +57,6 @@
 
             <ul class="nav-links">
                 <li><a href="#home" class="nav-item custom-hover">Home</a></li>
-                <li><a href="#about" class="nav-item custom-hover">Our Story</a></li>
                 <li class="dropdown nav-item custom-hover">
                     <a href="#explore" class="dropbtn">Explore <i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown-content glass-panel" id="navDropdown">
@@ -66,8 +65,13 @@
                     </div>
                 </li>
                 <li><a href="#team" class="nav-item custom-hover">Leadership</a></li>
-                <li><a href="#" class="nav-item custom-hover" id="openContactBtn">Contact</a></li>
                 <li><button class="btn btn-glass custom-hover" id="openAdminBtn">Manage App</button></li>
+                <li><a href="#" class="nav-item custom-hover" id="openAuthBtn"><i class="fa-solid fa-user"></i> Sign
+                        In</a></li>
+                <li><a href="#" class="nav-item custom-hover" id="openCartBtn">
+                        <i class="fa-solid fa-cart-shopping"></i> Cart <span class="cart-badge"
+                            id="cartCountBadge">0</span>
+                    </a></li>
             </ul>
 
             <div class="hamburger custom-hover">
@@ -396,6 +400,72 @@
         </div>
     </section>
 
+    <!-- Customer Reviews Section -->
+    <section class="section reviews-section animated-bg" id="reviews">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2 class="section-title">What Our <span class="text-gradient">Customers Say</span></h2>
+                <p>Real experiences from our valued Sapna Foam family.</p>
+            </div>
+
+            <div class="reviews-grid gsap-slide-up">
+                <div class="review-card glass-panel custom-hover">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"I ordered a custom Sheesham wood bedset for my daughter's wedding. The
+                        polish, the carving, the fabric... everything was absolutely perfect! Delivered right on time in
+                        Multan without a single scratch."</p>
+                    <div class="review-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Mrs. Fatima Tariq</h4>
+                            <span>Verified Buyer • 12 Feb 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card glass-panel custom-hover" style="transition-delay: 0.1s;">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Bought my 3rd Diamond Supreme foam mattress from Sapna. Adeel bhai gave me
+                        an incredible discount compared to the market. The customer service here is unmatched in South
+                        Punjab."</p>
+                    <div class="review-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Ali Hassan</h4>
+                            <span>Verified Buyer • 05 Jan 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card glass-panel custom-hover" style="transition-delay: 0.2s;">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"I was skeptical about ordering furniture over WhatsApp, but the team sent me
+                        continuous video updates during the polish process of my center tables. Transparency builds
+                        trust. Highly highly recommended!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div class="author-info">
+                            <h4>Dr. Salman Waqar</h4>
+                            <span>Verified Buyer • 28 Dec 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Frequently Asked Questions -->
     <section class="section faq-section" id="faq">
         <div class="section-container">
@@ -464,6 +534,69 @@
         </div>
     </section>
 
+    <!-- Information & Policies Section -->
+    <section class="section policies-section animated-bg-subtle" id="information">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2 class="section-title">Information & <span class="text-gradient">Policies</span></h2>
+                <p>Everything you need to know about shopping with Sapna Furniture.</p>
+            </div>
+
+            <div class="policies-grid">
+                <!-- Shop FAQs -->
+                <div class="policy-card glass-panel gsap-slide-up custom-hover">
+                    <div class="policy-icon"><i class="fa-solid fa-store"></i></div>
+                    <h3>Shop FAQs</h3>
+                    <div class="policy-content">
+                        <h4>Do you customize wood furniture?</h4>
+                        <p>Yes, we offer complete customization for wood furniture. You can select the wood type (e.g.,
+                            Sheesham, Keekar), polish color, fabric, and dimensions to match your vision perfectly.</p>
+                        <h4>What home decor items are available?</h4>
+                        <p>Besides premium furniture, we offer high-end branded mattresses, elegant curtains, luxury
+                            wall-arts, and complete drawing room accessories imported and locally crafted.</p>
+                        <h4>Are there ongoing sales or discounts?</h4>
+                        <p>We host seasonal and clearance sales periodically. Special bundle discounts are always
+                            available if you purchase complete bedroom sets or wedding packages.</p>
+                    </div>
+                </div>
+
+                <!-- Support FAQs -->
+                <div class="policy-card glass-panel gsap-slide-up custom-hover" style="transition-delay: 0.1s;">
+                    <div class="policy-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3>Support FAQs</h3>
+                    <div class="policy-content">
+                        <h4>How do I track my order?</h4>
+                        <p>Once your order is confirmed, our dispatcher will send you a live tracking link via WhatsApp.
+                            You can also contact our support team at any time.</p>
+                        <h4>What is the return & exchange policy?</h4>
+                        <p>For custom-made orders, returns are only accepted in case of significant manufacturing
+                            defects reported within 3 days of delivery.</p>
+                        <h4>How can I contact support?</h4>
+                        <p>You can reach our dedicated support team directly by calling 0333 6005865 or via WhatsApp at
+                            0313 6791333 during our business hours.</p>
+                    </div>
+                </div>
+
+                <!-- Legal Policies -->
+                <div class="policy-card glass-panel gsap-slide-up custom-hover" style="transition-delay: 0.2s;">
+                    <div class="policy-icon"><i class="fa-solid fa-balance-scale"></i></div>
+                    <h3>Legal Policies</h3>
+                    <div class="policy-content">
+                        <h4>Terms of Service</h4>
+                        <p>By accessing and ordering from the Sapna Furniture website, you agree to our terms. All
+                            website content and images are the intellectual property of Sapna Foam.</p>
+                        <h4>Privacy Policy</h4>
+                        <p>At Sapna Furniture, your privacy is paramount. Personal details collected during checkout are
+                            strictly used for order processing and delivery fulfillment.</p>
+                        <h4>Cookies Policy</h4>
+                        <p>Our site uses functional and performance cookies to maintain your active shopping cart
+                            session and remember your login state.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 🌟 EXPLICIT & MASSIVE FOOTER BOARD -->
     <footer class="footer" id="contact">
         <div class="premium-footer-board gsap-slide-up">
@@ -496,17 +629,14 @@
                     </ul>
                 </div>
 
-                <!-- Support -->
+                <!-- Support / Info -->
                 <div class="premium-block custom-hover">
-                    <div class="block-icon"><i class="fa-solid fa-headset"></i></div>
-                    <h3>Support</h3>
+                    <div class="block-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <h3>Information</h3>
                     <ul class="footer-links">
-                        <li><a href="#contactModal"
-                                onclick="document.getElementById('contactModal').classList.add('active'); return false;">Contact
-                                Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Warranty Info</a></li>
+                        <li><a href="#information">Shop FAQs</a></li>
+                        <li><a href="#information">Support FAQs</a></li>
+                        <li><a href="#information">Legal / Policies</a></li>
                     </ul>
                 </div>
 

@@ -408,8 +408,11 @@ function renderProducts(mainCategory, subCategory = 'all') {
         } else if (document.getElementById('public-page')) {
             const waText = encodeURIComponent(`I want to order:\n*${product.name}*\nPrice: ${product.price}`);
             actionButtons = `
-                <a href="https://wa.me/923136791333?text=${waText}" target="_blank" class="btn btn-primary w-100 custom-hover" style="margin-top:15px; background: #25D366; justify-content: center; color: white !important; border-color: #25D366;">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Order via WhatsApp
+                <button class="btn btn-primary w-100 custom-hover" style="margin-top:15px; justify-content: center;" onclick="addToCart(${product.id})">
+                    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                </button>
+                <a href="https://wa.me/923136791333?text=${waText}" target="_blank" class="btn btn-glass w-100 custom-hover" style="margin-top:10px; justify-content: center; color: #25D366; border-color: #25D366;">
+                    <i class="fa-brands fa-whatsapp"></i> Direct WhatsApp
                 </a>
             `;
         }
@@ -836,3 +839,246 @@ function setupLeadershipUploads() {
         });
     }
 }
+
+// -----------------------------------------
+// AUTHENTICATION LOGIC
+// -----------------------------------------
+let currentUser = null;
+
+function switchAuthTab(tab) {
+    document.querySelectorAll('.auth-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.auth-tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.auth-tab-content').forEach(c => c.style.display = 'none');
+
+    event.target.classList.add('active');
+    const targetForm = tab === 'login' ? document.getElementById('loginForm') : document.getElementById('signupForm');
+    targetForm.style.display = 'block';
+    setTimeout(() => targetForm.classList.add('active'), 10);
+}
+
+function handleLogin() {
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPass').value;
+    if (!email || !pass) {
+        alert("Please enter email and password.");
+        return;
+    }
+    currentUser = { email: email, name: email.split('@')[0] };
+    document.getElementById('openAuthBtn').innerHTML = `<i class="fa-solid fa-user-check"></i> Hi, ${currentUser.name}`;
+    document.getElementById('authModal').classList.remove('active');
+    alert("Logged in successfully!");
+}
+
+function handleSignup() {
+    const name = document.getElementById('signupName').value;
+    const email = document.getElementById('signupEmail').value;
+    const pass = document.getElementById('signupPass').value;
+    if (!name || !email || !pass) {
+        alert("Please fill all fields.");
+        return;
+    }
+    currentUser = { email: email, name: name };
+    document.getElementById('openAuthBtn').innerHTML = `<i class="fa-solid fa-user-check"></i> Hi, ${currentUser.name}`;
+    document.getElementById('authModal').classList.remove('active');
+    alert("Account created successfully!");
+}
+
+// -----------------------------------------
+// CART & CHECKOUT LOGIC
+// -----------------------------------------
+let cart = [];
+
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    const existing = cart.find(item => item.id === productId);
+    if (existing) {
+        existing.qty += 1;
+    } else {
+        cart.push({ ...product, qty: 1 });
+    }
+
+    updateCartUI();
+
+    // Quick feedback animation
+    const badge = document.getElementById('cartCountBadge');
+    if (badge) {
+        gsap.fromTo(badge, { scale: 1.5 }, { scale: 1, duration: 0.3, ease: "back.out(3)" });
+    }
+}
+
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCartUI();
+}
+
+function updateCartQty(productId, delta) {
+    const item = cart.find(i => i.id === productId);
+    if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) removeFromCart(productId);
+        else updateCartUI();
+    }
+}
+
+function updateCartUI() {
+    const count = cart.reduce((sum, item) => sum + item.qty, 0);
+    const badge = document.getElementById('cartCountBadge');
+    if (badge) badge.textContent = count;
+
+    const container = document.getElementById('cartItemsContainer');
+    if (!container) return;
+
+    if (cart.length === 0) {
+        container.innerHTML = '<div class="empty-cart-msg">Your cart is currently empty.</div>';
+        document.getElementById('cartTotalDisplay').textContent = 'Rs 0';
+        return;
+    }
+
+    let html = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        const numericPrice = parseFloat(item.price.replace(/[^0-9.]/g, '')) || 0;
+        total += numericPrice * item.qty;
+
+        html += `
+            <div class="cart-item">
+                <img src="${item.image}" alt="">
+                <div class="cart-item-info">
+                    <div class="cart-item-title">${item.name}</div>
+                    <div class="cart-item-price">${item.price}</div>
+                    <div class="cart-item-actions">
+                        <div>
+                            <button class="qty-btn" onclick="updateCartQty(${item.id}, -1)">-</button>
+                            <span style="display:inline-block; width:20px; text-align:center;">${item.qty}</span>
+                            <button class="qty-btn" onclick="updateCartQty(${item.id}, 1)">+</button>
+                        </div>
+                        <button class="remove-btn custom-hover" onclick="removeFromCart(${item.id})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
+    document.getElementById('cartTotalDisplay').textContent = `Rs ${total.toLocaleString()}`;
+}
+
+function getOrderText() {
+    let text = "🛍️ *NEW SAPNA FURNITURE ORDER*\n\n";
+    text += "*Items:*\n";
+    let total = 0;
+
+    cart.forEach(item => {
+        const numericPrice = parseFloat(item.price.replace(/[^0-9.]/g, '')) || 0;
+        total += numericPrice * item.qty;
+        text += `- ${item.name} (x${item.qty}) - ${item.price}\n`;
+    });
+
+    text += `\n*Total Output:* Rs ${total.toLocaleString()}\n\n`;
+
+    const name = document.getElementById('checkoutName').value || 'N/A';
+    const phone = document.getElementById('checkoutPhone').value || 'N/A';
+    const address = document.getElementById('checkoutAddress').value || 'N/A';
+
+    const paymentMethod = document.querySelector('input[name="paymethod"]:checked')?.value || 'N/A';
+
+    text += "*Customer Details:*\n";
+    text += `Name: ${name}\n`;
+    text += `Phone: ${phone}\n`;
+    text += `Address: ${address}\n\n`;
+    text += `*Payment Method:* ${paymentMethod}\n`;
+
+    return text;
+}
+
+function placeOrder(method) {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    const name = document.getElementById('checkoutName').value;
+    const phone = document.getElementById('checkoutPhone').value;
+    const address = document.getElementById('checkoutAddress').value;
+
+    if (!name || !phone || !address) {
+        alert("Please fill all delivery information.");
+        return;
+    }
+
+    const orderText = getOrderText();
+
+    if (method === 'whatsapp') {
+        const waLink = `https://wa.me/923136791333?text=${encodeURIComponent(orderText)}`;
+        window.open(waLink, '_blank');
+    } else if (method === 'email') {
+        const subject = encodeURIComponent("New Sapna Furniture Order");
+        const mailtoLink = `mailto:sapnafurniture@example.com?subject=${subject}&body=${encodeURIComponent(orderText)}`;
+        window.location.href = mailtoLink;
+    }
+
+    // Clear cart after order init
+    cart = [];
+    updateCartUI();
+    document.getElementById('checkoutModal').classList.remove('active');
+    document.getElementById('cartSidebar').classList.remove('open');
+    document.getElementById('cartOverlay').classList.remove('show');
+}
+
+// -----------------------------------------
+// EVENT LISTENERS FOR NEW MODALS
+// -----------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const authModal = document.getElementById('authModal');
+    const openAuthBtn = document.getElementById('openAuthBtn');
+    const closeAuthBtn = document.getElementById('closeAuthBtn');
+
+    if (openAuthBtn) openAuthBtn.addEventListener('click', (e) => { e.preventDefault(); authModal.classList.add('active'); });
+    if (closeAuthBtn) closeAuthBtn.addEventListener('click', () => authModal.classList.remove('active'));
+
+    const cartSidebar = document.getElementById('cartSidebar');
+    const openCartBtn = document.getElementById('openCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartOverlay = document.getElementById('cartOverlay');
+
+    const openCart = (e) => {
+        if (e) e.preventDefault();
+        cartSidebar.classList.add('open');
+        cartOverlay.classList.add('show');
+    };
+
+    const closeCart = () => {
+        cartSidebar.classList.remove('open');
+        cartOverlay.classList.remove('show');
+    };
+
+    if (openCartBtn) openCartBtn.addEventListener('click', openCart);
+    if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+    if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+
+    const checkoutModal = document.getElementById('checkoutModal');
+    const openCheckoutBtn = document.getElementById('openCheckoutBtn');
+    const closeCheckoutBtn = document.getElementById('closeCheckoutBtn');
+
+    if (openCheckoutBtn) openCheckoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert("Cart is empty!");
+            return;
+        }
+        closeCart();
+        checkoutModal.classList.add('active');
+    });
+
+    if (closeCheckoutBtn) closeCheckoutBtn.addEventListener('click', () => checkoutModal.classList.remove('active'));
+
+    // Close modals on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal')) {
+            e.target.classList.remove('active');
+        }
+    });
+});
+

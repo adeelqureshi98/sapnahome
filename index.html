@@ -37,6 +37,8 @@
     <div class="top-bar-info">
         <div class="top-bar-container">
             <span class="top-item"><i class="fa-solid fa-clock-rotate-left"></i> Established since 1980</span>
+            <span class="top-item"><i class="fa-regular fa-clock"></i> Hours: Monday - Sunday 9:00 AM to 8:00 PM <span
+                    style="color:#f43f5e; font-weight:700; margin-left:5px;">(Friday Off)</span></span>
             <span class="top-item"><i class="fa-solid fa-location-dot"></i> Near UBL Bank, GT Road, Kot Addu</span>
             <span class="top-item"><i class="fa-solid fa-phone"></i> 0333 6005865 | 0331 8009893</span>
             <a href="https://www.facebook.com/share/g/1BF8FtjRZd/" target="_blank" class="top-fb-btn custom-hover"><i
@@ -67,7 +69,11 @@
                 </li>
                 <li><a href="#team" class="nav-item custom-hover">Leadership</a></li>
                 <li><a href="#" class="nav-item custom-hover" id="openContactBtn">Contact</a></li>
-                <!-- Manage App button removed for public view -->
+                <li><a href="#" class="nav-item custom-hover auth-nav-btn" id="openAuthBtn"><i
+                            class="fa-regular fa-user"></i> Sign In</a></li>
+                <li><a href="#" class="nav-item custom-hover cart-nav-btn" id="openCartBtn"><i
+                            class="fa-solid fa-bag-shopping"></i> <span id="cartCountBadge"
+                            class="cart-count">0</span></a></li>
             </ul>
 
             <div class="hamburger custom-hover">
@@ -384,6 +390,69 @@
         </div>
     </section>
 
+    <!-- Customer Reviews -->
+    <section class="section reviews-section" id="reviews">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2 class="section-title">What Our <span class="text-gradient">Customers Say</span></h2>
+                <p>Real stories from our beloved clients.</p>
+            </div>
+
+            <div class="reviews-grid gsap-slide-up">
+                <div class="review-card glass-panel custom-hover">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"The bed I ordered is absolutely stunning. The craftsmanship is top-notch and
+                        it looks perfect in my new home. Delivery was early and the staff was very polite."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">O</div>
+                        <div class="author-info">
+                            <h4>Osama Ali</h4>
+                            <span>March 1, 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card glass-panel custom-hover" style="transition-delay: 0.1s;">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"I bought a custom sofa set for my drawing room. The fabric quality and the
+                        foam comfort exceeded my expectations. Sapna Furniture really lives up to its name!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sara Khan</h4>
+                            <span>Feb 25, 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card glass-panel custom-hover" style="transition-delay: 0.2s;">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="review-text">"Excellent customer service by Mr. Adeel. They guided me well about what will
+                        suit my room size. Prices are a bit premium but totally worth the durability."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Ahmed Raza</h4>
+                            <span>Feb 20, 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Frequently Asked Questions -->
     <section class="section faq-section" id="faq">
         <div class="section-container">
@@ -449,6 +518,68 @@
                     </div>
                 </div>
             </div>
+    </section>
+
+    <!-- Information & Policies Section -->
+    <section class="section policies-section animated-bg-subtle" id="information">
+        <div class="section-container">
+            <div class="section-header text-center gsap-slide-up">
+                <h2 class="section-title">Information & <span class="text-gradient">Policies</span></h2>
+                <p>Everything you need to know about shopping with Sapna Furniture.</p>
+            </div>
+
+            <div class="policies-grid">
+                <!-- Shop FAQs -->
+                <div class="policy-card glass-panel gsap-slide-up custom-hover">
+                    <div class="policy-icon"><i class="fa-solid fa-store"></i></div>
+                    <h3>Shop FAQs</h3>
+                    <div class="policy-content">
+                        <h4>Do you customize wood furniture?</h4>
+                        <p>Yes, we offer complete customization for wood furniture. You can select the wood type (e.g.,
+                            Sheesham, Keekar), polish color, fabric, and dimensions to match your vision perfectly.</p>
+                        <h4>What home decor items are available?</h4>
+                        <p>Besides premium furniture, we offer high-end branded mattresses, elegant curtains, luxury
+                            wall-arts, and complete drawing room accessories imported and locally crafted.</p>
+                        <h4>Are there ongoing sales or discounts?</h4>
+                        <p>We host seasonal and clearance sales periodically. Special bundle discounts are always
+                            available if you purchase complete bedroom sets or wedding packages.</p>
+                    </div>
+                </div>
+
+                <!-- Support FAQs -->
+                <div class="policy-card glass-panel gsap-slide-up custom-hover" style="transition-delay: 0.1s;">
+                    <div class="policy-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3>Support FAQs</h3>
+                    <div class="policy-content">
+                        <h4>How do I track my order?</h4>
+                        <p>Once your order is confirmed, our dispatcher will send you a live tracking link via WhatsApp.
+                            You can also contact our support team at any time.</p>
+                        <h4>What is the return & exchange policy?</h4>
+                        <p>For custom-made orders, returns are only accepted in case of significant manufacturing
+                            defects reported within 3 days of delivery.</p>
+                        <h4>How can I contact support?</h4>
+                        <p>You can reach our dedicated support team directly by calling 0333 6005865 or via WhatsApp at
+                            0313 6791333 during our business hours.</p>
+                    </div>
+                </div>
+
+                <!-- Legal Policies -->
+                <div class="policy-card glass-panel gsap-slide-up custom-hover" style="transition-delay: 0.2s;">
+                    <div class="policy-icon"><i class="fa-solid fa-balance-scale"></i></div>
+                    <h3>Legal Policies</h3>
+                    <div class="policy-content">
+                        <h4>Terms of Service</h4>
+                        <p>By accessing and ordering from the Sapna Furniture website, you agree to our terms. All
+                            website content and images are the intellectual property of Sapna Foam.</p>
+                        <h4>Privacy Policy</h4>
+                        <p>At Sapna Furniture, your privacy is paramount. Personal details collected during checkout are
+                            strictly used for order processing and delivery fulfillment.</p>
+                        <h4>Cookies Policy</h4>
+                        <p>Our site uses functional and performance cookies to maintain your active shopping cart
+                            session and remember your login state.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -484,17 +615,14 @@
                     </ul>
                 </div>
 
-                <!-- Support -->
+                <!-- Shop, Support, Legal -->
                 <div class="premium-block custom-hover">
-                    <div class="block-icon"><i class="fa-solid fa-headset"></i></div>
-                    <h3>Support</h3>
+                    <div class="block-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    <h3>Information</h3>
                     <ul class="footer-links">
-                        <li><a href="#contactModal"
-                                onclick="document.getElementById('contactModal').classList.add('active'); return false;">Contact
-                                Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Warranty Info</a></li>
+                        <li><a href="#information">Shop FAQs</a></li>
+                        <li><a href="#information">Support FAQs</a></li>
+                        <li><a href="#information">Legal / Policies</a></li>
                     </ul>
                 </div>
 
@@ -573,7 +701,152 @@
         </div>
     </div>
 
-    <!-- Admin Modal Removed for Public View -->
+    <!-- 🌟 AUTH MODAL (LOGIN / SIGN UP) -->
+    <div class="modal" id="authModal">
+        <div class="modal-content glass-panel auth-modal-box">
+            <span class="close-modal custom-hover" id="closeAuthBtn"><i class="fa-solid fa-xmark"></i></span>
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" onclick="switchAuthTab('login')">Login</button>
+                <button class="auth-tab-btn" onclick="switchAuthTab('signup')">Sign Up</button>
+            </div>
+
+            <div id="loginForm" class="auth-tab-content active">
+                <div class="modal-header">
+                    <h2>Welcome Back</h2>
+                    <p>Enter your details to access your account.</p>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-regular fa-envelope"></i> Email Address</label>
+                    <input type="email" id="loginEmail" class="glass-input" placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="loginPass" class="glass-input" placeholder="••••••••">
+                </div>
+                <button class="btn btn-primary w-100" style="justify-content: center; margin-top: 10px;"
+                    onclick="handleLogin()">Login</button>
+            </div>
+
+            <div id="signupForm" class="auth-tab-content" style="display: none;">
+                <div class="modal-header">
+                    <h2>Create Account</h2>
+                    <p>Join the Sapna Furniture family today.</p>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-regular fa-user"></i> Full Name</label>
+                    <input type="text" id="signupName" class="glass-input" placeholder="e.g. Ali Khan">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-regular fa-envelope"></i> Email Address</label>
+                    <input type="email" id="signupEmail" class="glass-input" placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="signupPass" class="glass-input" placeholder="••••••••">
+                </div>
+                <button class="btn btn-primary w-100" style="justify-content: center; margin-top: 10px;"
+                    onclick="handleSignup()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🌟 CART & CHECKOUT SIDEBAR -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <span class="close-cart custom-hover" id="closeCartBtn"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+
+        <div class="cart-body" id="cartItemsContainer">
+            <!-- Cart Items Rendered Here -->
+            <div class="empty-cart-msg">Your cart is currently empty.</div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-totals">
+                <span>Total:</span>
+                <span id="cartTotalDisplay">Rs 0</span>
+            </div>
+            <button class="btn btn-primary w-100 checkout-btn" id="openCheckoutBtn"
+                style="justify-content: center;">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- 🌟 CHECKOUT MODAL -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content glass-panel" style="max-height: 85vh; overflow-y: auto;">
+            <span class="close-modal custom-hover" id="closeCheckoutBtn"><i class="fa-solid fa-xmark"></i></span>
+            <div class="modal-header">
+                <h2>Complete Your Order</h2>
+                <p>Provide your delivery and payment details.</p>
+            </div>
+
+            <div class="checkout-grid">
+                <!-- Delivery Info -->
+                <div class="checkout-section">
+                    <h3><i class="fa-solid fa-truck"></i> Delivery Information</h3>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="checkoutName" class="glass-input" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="checkoutPhone" class="glass-input" placeholder="03XXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Complete Address</label>
+                        <textarea id="checkoutAddress" class="glass-input" rows="3"
+                            placeholder="House/Street, Area, City"></textarea>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="checkout-section">
+                    <h3><i class="fa-regular fa-credit-card"></i> Payment Method</h3>
+                    <div class="payment-methods">
+                        <label class="payment-option">
+                            <input type="radio" name="paymethod" value="Meezan Bank" checked>
+                            <span class="pay-box">
+                                <strong>Mezaan Bank</strong><br>
+                                <small>Acct Title: Muhammad Adeel<br>Acct No: 9501-0102525596</small>
+                            </span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymethod" value="Easypaisa">
+                            <span class="pay-box">
+                                <strong>Easypaisa</strong><br>
+                                <small>Acct Title: Muhammad Adeel<br>Acct No: 03136791333</small>
+                            </span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymethod" value="JazzCash">
+                            <span class="pay-box">
+                                <strong>JazzCash</strong><br>
+                                <small>Acct Title: Muhammad Adil<br>Acct No: 03318009893</small>
+                            </span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="paymethod" value="Cash on Delivery">
+                            <span class="pay-box">
+                                <strong>Cash on Delivery (COD)</strong><br>
+                                <small>Pay physically when receiving the order.</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-actions">
+                <button class="btn btn-primary w-100" style="justify-content: center; font-size: 1.1rem; padding: 15px;"
+                    onclick="placeOrder('whatsapp')"><i class="fa-brands fa-whatsapp"></i> Confirm Order via
+                    WhatsApp</button>
+                <button class="btn btn-glass w-100" style="justify-content: center; margin-top: 15px;"
+                    onclick="placeOrder('email')"><i class="fa-regular fa-envelope"></i> Send Order via Email</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/923136791333" target="_blank" class="floating-wa-btn custom-hover"
@@ -586,7 +859,10 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
     <script src="firebase-config.js"></script>
 
-    <!-- Scripts -->
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Custom Scripts -->
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
