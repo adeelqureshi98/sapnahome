@@ -2160,17 +2160,22 @@ ul {
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.95);
+        background: var(--glass-bg);
         backdrop-filter: blur(15px);
         padding: 20px 0;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         text-align: center;
         border-radius: 0 0 20px 20px;
+        border: 1px solid var(--glass-border);
     }
 
     .nav-links.active {
         display: flex;
         animation: fadeIn 0.3s ease;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
     }
 
     .dropdown {
@@ -2185,9 +2190,10 @@ ul {
         visibility: visible;
         transform: none;
         display: none;
-        background: rgba(0, 0, 0, 0.03);
+        background: rgba(0, 0, 0, 0.2);
         margin-top: 10px;
         padding: 10px;
+        border-radius: 12px;
     }
 
     .dropdown:hover .dropdown-content,

@@ -310,7 +310,7 @@ function initNavbarScroll() {
         });
 
         // Close mobile nav when clicking normal links
-        const navItems = navLinks.querySelectorAll('li > a:not(.dropbtn)');
+        const navItems = navLinks.querySelectorAll('li > a:not(.dropbtn):not(#themeToggleBtn)');
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
